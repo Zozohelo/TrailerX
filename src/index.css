@@ -1,0 +1,6 @@
+body {
+  background: linear-gradient(135deg, rgb(15, 16, 73), rgb(11, 10, 31), rgb(50, 35, 90));
+  min-height: 100vh;
+  margin: 0;
+  font-family: sans-serif;
+}
