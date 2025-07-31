@@ -1,6 +1,6 @@
 "use client";
-import React, { useCallback, useEffect, useRef, useState } from "react";
-import { AnimatePresence, motion, LayoutGroup } from "motion/react";
+import { useCallback, useEffect,useState } from "react";
+import { AnimatePresence, motion} from "motion/react";
 // Utility function to concatenate class names
 function cn(...classes: (string | undefined)[]) {
   return classes.filter(Boolean).join(" ");

@@ -1,12 +1,9 @@
-import React from 'react';
+
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
-import Movie from './Movie';
 import type { IMovie } from '../utils/util';
 
-import 'swiper/css';
-import 'swiper/css/pagination';
-import 'swiper/css/navigation';
+
 
 interface MovieCarouselProps {
   movies: IMovie[];
@@ -32,7 +29,7 @@ const MovieCarousel = ({ movies }: MovieCarouselProps) => {
               className="relative w-full h-[240px] sm:h-[280px] md:h-[320px] lg:h-[360px] xl:h-[400px] rounded-xl overflow-hidden"
             >
               <img
-                src={`https://image.tmdb.org/t/p/original${movie.backdrop_path || movie.poster_path}`}
+                src={`https://image.tmdb.org/t/p/original${movie.poster_path}`}
                 alt={movie.title}
                 className="w-full h-full object-cover object-center"
               />

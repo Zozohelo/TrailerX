@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import { useContext, useState } from 'react';
 import { motion } from 'framer-motion';
 import { MovieContext } from '../contexts/MovieContext';
 import Movie from './Movie';
@@ -17,9 +17,7 @@ const placeholders = [
     "Enter any actor"
   ];
  
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    console.log(e.target.value);
-  };
+
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log("submitted");

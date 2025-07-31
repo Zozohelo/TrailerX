@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import { useContext } from 'react';
 import { motion } from 'framer-motion';
 import { MovieContext } from '../contexts/MovieContext';
 import Movie from './Movie';
