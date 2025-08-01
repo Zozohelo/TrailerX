@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import type { IMovie } from '../utils/util';
+import { div } from 'framer-motion/client';
+import { FaArrowLeft } from 'react-icons/fa';
 
 const API_KEY = 'a337d7647506201e1140aaa51a6b6b1b';
 
@@ -24,6 +26,7 @@ const MovieInfo = () => {
           vote_average: data.vote_average,
           release_date: data.release_date,
           original_language: data.original_language,
+          runtime: data.runtime
         });
 
         const videosRes = await fetch(
@@ -51,7 +54,11 @@ const MovieInfo = () => {
   }
 
   return (
-    <div className="container mx-auto mt-28 px-4 flex flex-col gap-12">
+    <>
+    <div className='pt-20 mt-10 p-5 flex justify-start items-center'>
+      <Link className='bg-red-500 p-2 rounded-2xl text-white flex justify-center items-center gap-1' to={'/'}><FaArrowLeft /></Link>
+    </div>
+    <div className="container mx-auto mt-5 px-4 flex flex-col gap-12">
       {/* Film cím */}
       <h1 className="text-5xl font-extrabold text-center text-white">
         {movie.title}
@@ -80,6 +87,10 @@ const MovieInfo = () => {
               <p className="font-semibold">⭐ {Number(movie.vote_average).toFixed(2)}</p>
             </div>
             <div>
+              <p className="text-sm text-gray-400">RunTime</p>
+              <p className="font-semibold">⏳ {Number(movie.runtime)} min</p>
+            </div>
+            <div>
               <p className="text-sm text-gray-400">Language</p>
               <p className="font-semibold uppercase">{movie.original_language}</p>
             </div>
@@ -92,7 +103,7 @@ const MovieInfo = () => {
       </div>
 
       {/* Trailer */}
-      <div className="bg-gray-900 bg-opacity-50 rounded-2xl shadow-2xl overflow-hidden">
+      <div className="rounded-2xl shadow-2xl overflow-hidden pb-10">
         {trailerKey ? (
           <div className="w-full aspect-video">
             <iframe
@@ -109,6 +120,7 @@ const MovieInfo = () => {
         )}
       </div>
     </div>
+    </>
   );
 };
 

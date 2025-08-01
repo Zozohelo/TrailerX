@@ -3,7 +3,6 @@ import { motion } from 'framer-motion';
 import { MovieContext } from '../contexts/MovieContext';
 import Movie from './Movie';
 import { FlipWords } from '../ui/flip-words';
-import MovieCarousel from './MovieCarousel';
 
 const Home = () => {
   const { popularMovies } = useContext(MovieContext);
@@ -34,8 +33,6 @@ const Home = () => {
         </div>
       </div>
 
-      {/* Carousel Section */}
-      <MovieCarousel movies={popularMovies} />
 
       {/* Movies Grid */}
       <div className="mt-12 w-3/4 px-2 sm:px-4">

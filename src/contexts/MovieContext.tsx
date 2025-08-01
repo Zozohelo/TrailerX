@@ -31,7 +31,8 @@ export const MovieContextProvider = ({ children }: { children: ReactNode }) => {
         poster_path: movie.poster_path,
         vote_average: movie.vote_average,
         release_date: movie.release_date,
-        original_language: movie.original_language
+        original_language: movie.original_language,
+        runtime: movie.runtime
       }));
       setPopularMovies(fetchedMovies);
     } catch (error) {
@@ -62,7 +63,8 @@ export const MovieContextProvider = ({ children }: { children: ReactNode }) => {
         poster_path: movie.poster_path,
         vote_average: movie.vote_average,
         release_date: movie.release_date,
-        original_language: movie.original_language
+        original_language: movie.original_language,
+        runtime: movie.runtime
       }));
 
       setAllMovies(fetchedMovies);
