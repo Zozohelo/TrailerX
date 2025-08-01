@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import type { IMovie } from '../utils/util';
-import { div } from 'framer-motion/client';
 import { FaArrowLeft } from 'react-icons/fa';
 
 const API_KEY = 'a337d7647506201e1140aaa51a6b6b1b';
